@@ -32,9 +32,9 @@ analysis_ds %>%
                                                       "Friday", "Saturday", "Sunday")),
          year=year(measure_date)) %>%     #extract the year
   group_by(year,dow,hour) %>%            
-  summarize(visits=mean(visits)) %>%    #calculate mean visits by day, hour, and year (see previous line)
+  summarize(est_visits=mean(est_visits)) %>%    #calculate mean visits by day, hour, and year (see previous line)
   ggplot() +
-  geom_tile(aes(x=hour,y=dow,fill=visits)) +
+  geom_tile(aes(x=hour,y=dow,fill=est_visits)) +
   geom_vline(xintercept = 17) +
   scale_fill_viridis_c() +
   theme_minimal() +
