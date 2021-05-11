@@ -11,7 +11,7 @@ model_formula <- as.formula(str_c("visits ~ policy +",
                                   str_c(names(visitation %>% select(monday:wind_speed_mean)),collapse = " + ")))
 M1 <- lm(model_formula,data = visitation)
 
-summary(m1) #This is regression 1 in the paper
+summary(M1) #This is regression 1 in the paper
 
 
 #build data set
