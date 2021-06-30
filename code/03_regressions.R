@@ -46,3 +46,14 @@ M3 <- lm(visits ~ policy + policy*hour + day + month + policy*month + precip_mea
 
 summary(M3) #this is regression 3 in the paper
 
+#making tables
+library(broom)
+library(gtsummary)
+t1 <- add_significance_stars(tbl_regression(M1), thresholds = c(0.01, 0.05, 0.1))
+t2 <- add_significance_stars(tbl_regression(M2), thresholds = c(0.01, 0.05, 0.1))
+t3 <- add_significance_stars(tbl_regression(M3), thresholds = c(0.01, 0.05, 0.1))
+
+t4 <- tbl_merge(tbls = list(t1, t2, t3))
+
+t4 #table in appendix
+
