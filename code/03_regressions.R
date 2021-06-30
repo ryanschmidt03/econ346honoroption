@@ -46,4 +46,3 @@ M3 <- lm(visits ~ policy + policy*hour + day + month + policy*month + precip_mea
 
 summary(M3) #this is regression 3 in the paper
 
-
